@@ -23,32 +23,7 @@ int removeDuplicates(int *nums, int numsSize)
         }
     }
 
-    flag = 0;
-    for (int i = 1; i < numsSize; i++)
-    {
-        if (*(nums + i) == -1000)
-        {
-            flag += 1;
-        }
-        else
-        {
-            *(nums + i - flag) = *(nums + i);
-            if (flag != 0)
-                *(nums + i) = -1000;
-        }
-    }
-    flag = 0;
-    for (int i = 0; i < numsSize; i++)
-    {
-        if (*(nums + i) != -1000)
-        {
-            flag += 1;
-        }
-        else
-        {
-            return flag;
-        }
-    }
+
     return flag;
 }
 
