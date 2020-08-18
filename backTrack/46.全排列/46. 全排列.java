@@ -1,6 +1,4 @@
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
 
@@ -12,22 +10,21 @@ class Solution {
         for (int item : nums)
             tempList.add(item);
 
+        backTrack(0, tempList, resList);
+
         return resList;
     }
 
-    public void backTrack(List<Integer> tempList, int first, int length, List<List<Integer>> resliList) {
-        if (first == length) {
-            resliList.add(new ArrayList<>(tempList));
-            return;
-        }
-        for (int i = first; i < tempList.size(); i++) {
-
+    public void backTrack(int first, List<Integer> tempList, List<List<Integer>> resList) {
+        if (first == tempList.size()) {
+            resList.add(new ArrayList<>(tempList));
+        } else {
+            int length = tempList.size();
+            for (int i = first; i < length; i++) {
+                Collections.swap(tempList, first, i);
+                backTrack(first + 1, tempList, resList);
+                Collections.swap(tempList, i, first);
+            }
         }
     }
-
-    // 决策树解法
-    public void decisionTree(int[] tempArray,int ){
-
-    }
-
 }
