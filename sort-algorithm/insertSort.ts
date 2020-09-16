@@ -19,6 +19,25 @@ const InsertSort = (array: number[]) => {
   }
 }
 
+/**
+ * 插入排序
+ * @param array
+ */
+const InsertSort2 = (array: number[]) => {
+  const length = array.length
+  for (let i = 1; i < length; i++) {
+    for (let j = i; j > 0; j--) {
+      if (array[j] < array[j - 1]) {
+        let temp = array[j]
+        array[j] = array[j - 1]
+        array[j - 1] = temp
+      } else {
+        break
+      }
+    }
+  }
+}
+
 // let list = [1, 5, 2, 6, 8, 4]
-// InsertSort(list)
+// InsertSort2(list)
 // console.log(list)
