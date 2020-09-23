@@ -9,7 +9,7 @@ const ShellSort = (array: number[]) => {
     if (gap < 1) {
       break
     }
-    // 每个 分组开始下标
+    // 遍历 n个分组
     for (let start = 0; start < gap; start++) {
       // 遍历每个分组
       for (let i = start; i < length; i += gap) {
@@ -28,6 +28,3 @@ const ShellSort = (array: number[]) => {
   }
 }
 
-let list = [1, 3, 6, 8, 2, 9, 3, 35, 12, 48, 23]
-ShellSort(list)
-console.log(list)
